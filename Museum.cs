@@ -1,13 +1,17 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace NightAtTheMuseum
 {
     class Museum
     {
-        private List<Room> Rooms = new Room();
-        private List<ArtWork> ArtWork = new ArtWork();
+        public string name;
+        public List<Room> Rooms = new List<Room>();
+        public List<ArtWork> ArtWork = new List<ArtWork>();
 
-        private string CurrentRoom = "entrance";
+        private string CurrentRoom = "Entrance";
 
         public void addRoom(Room NewRoom)
         {
@@ -19,36 +23,37 @@ namespace NightAtTheMuseum
         }
         public List<ArtWork> getArtWorkInRoom(string ArtWorkInRoom)
         {
-            List<ArtWork> ArtWorkInRoom = new ArtWork();
+            List<ArtWork> artWorkInRoom = new List<ArtWork>();
 
             foreach (var artWork in ArtWork)
             {
                 if (artWork.belongToRoom.Equals(ArtWorkInRoom))
                 {
-                    ArtWorkInRoom.Add(artWork);
+                    artWorkInRoom.Add(artWork);
                 }
             }
 
-            return ArtWorkInRoom;
+            return artWorkInRoom;
         }
 
         public Room getCurrentRoom()
         {
-            var match = Rooms
-            .Where(x => x.Contains(CurrentRoom)).FirstOrDefault();
-
-            if (match != null)
+            foreach (var room in Rooms)
             {
-                return match;
+                if(room.name.Equals(CurrentRoom))
+                {
+                    Room currentRoom = room;
+                    return currentRoom;
+                }
             }
+            return null;
+
+
         }
         public void setCurrenRoom(string CurrentRoom)
         {
             this.CurrentRoom = CurrentRoom;
         }
-
-
-
 
     }
 }
