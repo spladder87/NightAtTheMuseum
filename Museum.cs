@@ -13,15 +13,15 @@ namespace NightAtTheMuseum
 
         private string CurrentRoom = "Entrance";
 
-        public void addRoom(Room NewRoom)
+        public void AddRoom(Room NewRoom)
         {
             Rooms.Add(NewRoom);
         }
-        public void addArtWork(ArtWork NewArtWork)
+        public void AddArtWork(ArtWork NewArtWork)
         {
             ArtWork.Add(NewArtWork);
         }
-        public List<ArtWork> getArtWorkInRoom(string ArtWorkInRoom)
+        public List<ArtWork> GetArtWorkInRoom(string ArtWorkInRoom)
         {
             List<ArtWork> artWorkInRoom = new List<ArtWork>();
 
@@ -36,7 +36,7 @@ namespace NightAtTheMuseum
             return artWorkInRoom;
         }
 
-        public Room getCurrentRoom()
+        public Room GetCurrentRoom()
         {
             foreach (var room in Rooms)
             {
@@ -50,7 +50,7 @@ namespace NightAtTheMuseum
 
 
         }
-        public void setCurrenRoom(string CurrentRoom)
+        public void SetCurrentRoom(string CurrentRoom)
         {
             this.CurrentRoom = CurrentRoom;
         }

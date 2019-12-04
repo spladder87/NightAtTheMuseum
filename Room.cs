@@ -8,12 +8,12 @@ namespace NightAtTheMuseum
         public string name;
         private List<Room> RoomAccess = new List<Room>();
         
-        public void addRoomAccess(Room NewRoomAccess)
+        public void AddRoomAccess(Room NewRoomAccess)
         {
             RoomAccess.Add(NewRoomAccess);
         }
 
-        public List<Room> getRoomAccess()
+        public List<Room> GetRoomAccess()
         {
             return RoomAccess;
         }
