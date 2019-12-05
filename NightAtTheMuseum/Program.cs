@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NightAtTheMuseum
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -22,6 +22,7 @@ namespace NightAtTheMuseum
 
                 if (SetCurrentRoom != null)
                 {
+                    Console.Clear();
                     RetroGaming.SetCurrentRoom(SetCurrentRoom);
                 }
                 else
@@ -38,13 +39,12 @@ namespace NightAtTheMuseum
             Console.WriteLine($"Welcome to {museum.name}");
         }
 
-        static string RoomChoice(List<string> roomNames,string menuchoice)
+        public static string RoomChoice(List<string> roomNames,string menuchoice)
         {
                 int number;
                 bool success = Int32.TryParse(menuchoice, out number);
                 if (success && number < roomNames.Count)
                 {
-                    Console.Clear();
                     return roomNames[number];
                 }
                 else
@@ -54,7 +54,7 @@ namespace NightAtTheMuseum
             }
 
 
-        static List<string> RoomAccessMenu(Room room)
+        public static List<string> RoomAccessMenu(Room room)
         {
             Console.WriteLine($"\nYou are in {room.name}");
 
@@ -81,7 +81,7 @@ namespace NightAtTheMuseum
         }
 
 
-        static void CreateMuseum(Museum newMuseum)
+        public static void CreateMuseum(Museum newMuseum)
         {
             newMuseum.name = "Retro Gaming Museum";
             newMuseum.AddArtWork(new ArtWork("Sonic", "Picture of Sonic the Hedgehog", "Sega", "White Room"));

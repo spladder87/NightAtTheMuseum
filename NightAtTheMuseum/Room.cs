@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NightAtTheMuseum
 {
-    class Room
+    public class Room
     {
         public string name;
         private List<Room> RoomAccess = new List<Room>();

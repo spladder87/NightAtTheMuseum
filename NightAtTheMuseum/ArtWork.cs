@@ -2,7 +2,7 @@ using System;
 
 namespace NightAtTheMuseum
 {
-    class ArtWork
+    public class ArtWork
     { 
         public string title;
         public string description;

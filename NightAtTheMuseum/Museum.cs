@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace NightAtTheMuseum
 {
-    class Museum
+    public class Museum
     {
         public string name;
         public List<Room> Rooms = new List<Room>();
@@ -53,6 +53,10 @@ namespace NightAtTheMuseum
         public void SetCurrentRoom(string CurrentRoom)
         {
             this.CurrentRoom = CurrentRoom;
+        }
+        public string ShowCurrentRoom()
+        {
+            return CurrentRoom;
         }
 
     }
